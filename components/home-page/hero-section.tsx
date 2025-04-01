@@ -4,7 +4,7 @@ import Background from '@/components/layout/background';
 import Container from '@/components/ui/container';
 import { Heading } from '@/components/ui/heading';
 import Countdown from '@/components/layout/countdown';
-import { Text } from '@/components/ui/text';
+import { TextSubTitle } from '@/components/ui/text';
 import Button from '@/components/ui/button';
 import HeroDog from '@/components/home-page/hero-section/hero-dog';
 
@@ -36,9 +36,7 @@ export default function HeroSection() {
 						</div>
 
 						<div className='flex flex-col gap-y-6'>
-							<Text className='text-theme-base-content-variant text-lg font-semibold'>
-								Subscribe to stay tuned for each launch and a chance to win SWAG!
-							</Text>
+							<TextSubTitle>Subscribe to stay tuned for each launch and a chance to win SWAG!</TextSubTitle>
 							<div className='flex w-full items-center justify-center lg:justify-start'>
 								<Button />
 							</div>

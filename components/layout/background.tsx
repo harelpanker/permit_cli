@@ -1,3 +1,4 @@
+import clsx from 'clsx';
 import Image, { StaticImageData } from 'next/image';
 
 import bg_ui_desktop from '@/assets/layout/bg_section_ui_desktop.svg';
@@ -8,17 +9,19 @@ type SectionBGWrapperProps = {
 	isRight?: boolean;
 	imageMobile?: StaticImageData;
 	imageDesktop?: StaticImageData;
+	className?: string;
 };
 
 export default function Background({
 	children,
+	className,
 	isRight = false,
 	imageMobile = bg_ui_mobile,
 	imageDesktop = bg_ui_desktop,
 }: SectionBGWrapperProps) {
 	return (
 		<div className='relative overflow-clip'>
-			<div className='relative z-30'>{children}</div>
+			<div className={clsx(className, 'relative z-30')}>{children}</div>
 			<div
 				className={`from-theme-orange to-theme-purple pointer-events-none absolute left-0 top-0 z-20 h-[2px] w-full ${
 					isRight ? 'bg-gradient-to-r' : 'bg-gradient-to-l'

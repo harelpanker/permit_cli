@@ -5,6 +5,16 @@ export function Text({ className, ...props }: React.ComponentPropsWithoutRef<'p'
 	return <p data-slot='text' {...props} className={clsx(className, 'text-pretty text-base')} />;
 }
 
+export function TextSubTitle({ className, ...props }: React.ComponentPropsWithoutRef<'p'>) {
+	return (
+		<p
+			data-slot='text'
+			{...props}
+			className={clsx(className, 'text-pretty text-theme-base-content-variant text-lg font-semibold')}
+		/>
+	);
+}
+
 export function TextLink({ className, ...props }: React.ComponentPropsWithoutRef<typeof Link>) {
 	return <Link {...props} className={clsx(className, 'hover:opacity-85 transition-opacity duration-300')} />;
 }
