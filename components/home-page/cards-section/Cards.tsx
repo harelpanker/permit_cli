@@ -1,14 +1,21 @@
-import { cardsData } from "@/components/home-page/cards-section/cards-data";
-import styles from "./styles.module.css";
+import { cardsData } from '@/components/home-page/cards-section/cards-data';
+import Card from './card';
 
 export default function Cards() {
-  return (
-    <ul className="flex flex-col gap-y-6 md:flex-row md:flex-wrap md:gap-x-8 lg:grid lg:grid-cols-5">
-      {cardsData.map((card) => (
-        <li key={card.title} className={styles.card}>
-          <a href={card.link}>{card.title}</a>
-        </li>
-      ))}
-    </ul>
-  );
+	return (
+		<ul className='flex flex-col gap-y-6 sm:flex-row sm:flex-wrap sm:gap-x-6 lg:grid lg:grid-cols-5 xl:gap-x-8'>
+			{cardsData.map(({ title, link, textDate, imageDesktop, imageMobile, cardFrameDesktop, cardFrameMobile }) => (
+				<Card
+					key={title}
+					link={link}
+					textDate={textDate}
+					title={title}
+					imageDesktop={imageDesktop}
+					imageMobile={imageMobile}
+					cardFrameDesktop={cardFrameDesktop}
+					cardFrameMobile={cardFrameMobile}
+				/>
+			))}
+		</ul>
+	);
 }
