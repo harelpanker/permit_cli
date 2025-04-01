@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 
 import bg_ui_desktop from '@/assets/layout/bg_section_ui_desktop.svg';
 import bg_ui_mobile from '@/assets/layout/bg_section_ui_mobile.svg';
@@ -6,8 +6,8 @@ import bg_ui_mobile from '@/assets/layout/bg_section_ui_mobile.svg';
 type SectionBGWrapperProps = {
 	children: React.ReactNode;
 	isRight?: boolean;
-	imageMobile?: string;
-	imageDesktop?: string;
+	imageMobile?: StaticImageData;
+	imageDesktop?: StaticImageData;
 };
 
 export default function Background({

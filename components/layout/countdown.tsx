@@ -1,15 +1,17 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { SlidingNumber } from '../motion-primitives/sliding-number';
+import clsx from 'clsx';
+import { SlidingNumber } from '@/components/motion-primitives/sliding-number';
 
 interface CountdownProps {
 	targetDate?: Date;
+	className?: string;
 }
 
 const Span = () => <span className='text-theme-base-content-variant'>:</span>;
 
-const Countdown: React.FC<CountdownProps> = ({ targetDate = new Date('2025-04-24T08:00:00') }) => {
+const Countdown: React.FC<CountdownProps> = ({ targetDate = new Date('2025-04-24T08:00:00'), className = '' }) => {
 	const [timeRemaining, setTimeRemaining] = useState({
 		days: 0,
 		hours: 0,
@@ -47,7 +49,7 @@ const Countdown: React.FC<CountdownProps> = ({ targetDate = new Date('2025-04-24
 	}
 
 	return (
-		<div className='font-ibm mx-auto flex gap-x-4 text-2xl font-semibold lg:gap-x-6 lg:text-4xl'>
+		<div className={clsx(className, 'font-ibm mx-auto flex gap-x-4 text-2xl font-semibold lg:gap-x-6 lg:text-4xl')}>
 			<SlidingNumber value={timeRemaining.days} padStart={true} />
 			<Span />
 			<SlidingNumber value={timeRemaining.hours} padStart={true} />
