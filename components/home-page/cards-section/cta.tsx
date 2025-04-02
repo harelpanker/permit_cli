@@ -9,7 +9,7 @@ import mobileImage from '@/assets/home-page/cards-section/cta-mobile.png';
 
 export default function CTA() {
 	return (
-		<Container className='bg-theme-ffdcc3 flex flex-col gap-y-14 px-4 py-20 text-center lg:grid lg:grid-cols-2 lg:gap-x-2 lg:overflow-hidden lg:rounded-[1.25rem] lg:p-0 lg:text-left'>
+		<Container className='bg-theme-ffdcc3 lg:border-theme-ffb381 flex flex-col gap-y-14 px-4 py-20 text-center lg:grid lg:grid-cols-2 lg:gap-x-2 lg:overflow-hidden lg:rounded-[1.25rem] lg:border lg:p-0 lg:text-left'>
 			<div className='flex flex-col gap-y-8 lg:justify-center lg:py-6 lg:pl-12'>
 				<div className='flex flex-col  gap-y-6'>
 					<Heading level={3}>Join the lives treams for a Daily Live Raffle! Win a Custom Keyboard!</Heading>

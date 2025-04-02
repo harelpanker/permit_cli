@@ -1,4 +1,4 @@
-import CardsSection from '@/components/home-page/cards-section';
+import CardsSection from '@/components/layout/cards-section';
 import HeroSection from '@/components/layout/hero-section';
 import MobileNavbar from '@/components/layout/mobile-navbar';
 
@@ -8,7 +8,11 @@ export default function Home() {
 			<MobileNavbar />
 			<main>
 				<HeroSection />
-				<CardsSection />
+				<CardsSection
+					isHomePage
+					title='Subscribe and reveal our exclusive CLI livestreams:'
+					subtitle='Join us for 5 days of exciting new releases'
+				/>
 			</main>
 		</>
 	);
