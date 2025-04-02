@@ -10,11 +10,11 @@ import HeroDog from '@/components/home-page/hero-section/hero-dog';
 
 import heroMain from '@/assets/home-page/hero-section/cli_launch_week.svg';
 import backgroundImage from '@/assets/home-page/hero-section/background.svg';
-import logo from '@/assets/home-page/hero-section/logo.svg';
+import logo from '@/assets/layout/logo.svg';
 
 export default function HeroSection() {
 	return (
-		<Background imageDesktop={backgroundImage}>
+		<Background showMobileImage={false} imageDesktop={backgroundImage}>
 			<Section className='flex flex-col py-14 text-center lg:gap-y-12 lg:py-28 lg:text-left'>
 				<Container className='hidden lg:flex'>
 					<Image priority src={logo} alt='Permit.io' />
