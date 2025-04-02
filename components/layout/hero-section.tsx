@@ -7,12 +7,13 @@ import Countdown from '@/components/layout/countdown';
 import { TextSubTitle } from '@/components/ui/text';
 import Button from '@/components/ui/button';
 import HeroDog from '@/components/home-page/hero-section/hero-dog';
+import HeroSectionShare from '@/components/subscribe-page/hero-section-share';
 
 import heroMain from '@/assets/home-page/hero-section/cli_launch_week.svg';
 import backgroundImage from '@/assets/home-page/hero-section/background.svg';
 import logo from '@/assets/layout/logo.svg';
 
-export default function HeroSection() {
+export default function HeroSection({ showBottom = true }: { showBottom?: boolean }) {
 	return (
 		<Background showMobileImage={false} imageDesktop={backgroundImage}>
 			<Section className='flex flex-col py-14 text-center lg:gap-y-12 lg:py-28 lg:text-left'>
@@ -35,17 +36,22 @@ export default function HeroSection() {
 							<Countdown className='lg:mx-0' />
 						</div>
 
-						<div className='flex flex-col gap-y-6'>
-							<TextSubTitle>Subscribe to stay tuned for each launch and a chance to win SWAG!</TextSubTitle>
-							<div className='flex w-full items-center justify-center lg:justify-start'>
-								<Button />
+						{showBottom ? (
+							<div className='flex flex-col gap-y-6'>
+								<TextSubTitle>Subscribe to stay tuned for each launch and a chance to win SWAG!</TextSubTitle>
+								<div className='flex w-full items-center justify-center lg:justify-start'>
+									<Button />
+								</div>
 							</div>
-						</div>
+						) : null}
 					</div>
 					<div className='hidden lg:block lg:shrink-0'>
 						<HeroDog />
 					</div>
 				</Container>
+
+				{!showBottom ? <HeroSectionShare /> : null}
+
 				<hr className='from-theme-orange to-theme-purple absolute bottom-0 left-0 top-auto h-[2px] w-full border-none bg-gradient-to-r' />
 			</Section>
 		</Background>
