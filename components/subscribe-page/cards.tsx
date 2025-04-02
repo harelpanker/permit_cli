@@ -1,3 +1,3 @@
-export default function Cards() {
-	return <ul></ul>;
+export default function SubscribeCards() {
+  return <ul></ul>;
 }
