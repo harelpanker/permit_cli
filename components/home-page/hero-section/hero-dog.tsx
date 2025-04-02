@@ -8,8 +8,6 @@ import dog from '@/assets/home-page/hero-section/dog.svg';
 import dogBottom from '@/assets/home-page/hero-section/hero-bottom.svg';
 import dogTop from '@/assets/home-page/hero-section/hero-top.svg';
 
-// -motion-translate-y-loop-25 motion-duration-[7s] motion-ease-in-out-cubic
-
 export default function HeroDog() {
 	const scrollFromTop = 50;
 	const [scroll] = useWindowScroll();
