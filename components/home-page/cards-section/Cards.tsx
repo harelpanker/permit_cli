@@ -1,5 +1,5 @@
 import { cardsData } from '@/components/home-page/cards-section/cards-data';
-import Card from './card';
+import Card from '@/components/home-page/cards-section/card';
 
 export default function Cards() {
 	return (
