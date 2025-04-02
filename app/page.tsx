@@ -9,7 +9,8 @@ export default function Home() {
 			<main>
 				<HeroSection />
 				<CardsSection
-					isHomePage
+					isHomePage={true}
+					isSubscribePage={false}
 					title='Subscribe and reveal our exclusive CLI livestreams:'
 					subtitle='Join us for 5 days of exciting new releases'
 				/>

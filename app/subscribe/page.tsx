@@ -9,7 +9,7 @@ export default function SubscribePage() {
 			<main>
 				<HeroSection showBottom={false} name='Gabriel Manor' number={304} />
 				<CardsSection
-					isSubscribePage
+					isSubscribePage={true}
 					isHomePage={false}
 					title='Subscribe to our exclusive CLI livestreams'
 					subtitle='Join us for 5 days of exciting new releases'
