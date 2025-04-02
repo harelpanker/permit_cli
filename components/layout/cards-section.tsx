@@ -10,7 +10,7 @@ import background from '@/assets/home-page/cards-section/background.svg';
 import backgroundMobile from '@/assets/home-page/cards-section/background-mobile.svg';
 
 export default function CardsSection({
-	isHomePage,
+	isHomePage = true,
 	isSubscribePage = false,
 	title,
 	subtitle,
