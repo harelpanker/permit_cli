@@ -31,7 +31,7 @@ const Button: React.FC<ButtonProps> = ({
 				className,
 				`text-theme-white inline-flex cursor-pointer items-center rounded-full border-2 border-transparent font-semibold tracking-tight transition duration-300 ${
 					primary ? ' bg-theme-purple hover:bg-theme-purple/85 border-theme-purple' : null
-				} ${isSmall ? 'gap-x-2 px-2 py-1.5 text-base' : 'gap-x-3 px-6 py-[0.625rem] text-lg'}`
+				} ${isSmall ? 'gap-x-2 px-2 py-1.5 text-base' : 'gap-x-3 px-6 py-[0.625rem] text-lg'} ${secondary ? '' : ''}`
 			)}>
 			{icon ? <Image src={iconSrc ? iconSrc : github} alt={text} /> : null}
 			<span>{text}</span>
