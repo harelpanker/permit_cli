@@ -27,10 +27,9 @@ const Button: React.FC<ButtonProps> = ({
 }) => {
 	const commonClasses = clsx(
 		className,
-		`text-theme-white inline-flex cursor-pointer items-center rounded-full border-2 font-semibold tracking-tight transition duration-300 
-		${primary ? 'bg-theme-purple hover:bg-theme-purple/85 border-theme-purple' : null}
-		${isSmall ? 'gap-x-2 px-2 py-1.5 text-base' : 'gap-x-3 px-6 py-[0.625rem] text-lg'}
-		${secondary ? 'border-theme-57433c bg-theme-453530 hover:bg-theme-57433c' : null}`
+		`button-base ${primary ? 'button-primary' : null} ${isSmall ? 'is-small' : 'is-normal'} ${
+			secondary ? 'button-secondary' : null
+		}`
 	);
 
 	const innerContent = (

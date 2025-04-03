@@ -1,0 +1,16 @@
+.button-base {
+	@apply text-theme-white inline-flex cursor-pointer items-center rounded-full border-2 font-semibold tracking-tight transition duration-300;
+
+	&.button-primary {
+		@apply bg-theme-purple hover:bg-theme-purple/85 border-theme-purple;
+	}
+	&.button-secondary {
+		@apply border-theme-57433c bg-theme-453530 hover:bg-theme-57433c;
+	}
+	&.is-small {
+		@apply gap-x-2 px-2 py-1.5 text-base;
+	}
+	&.is-normal {
+		@apply gap-x-3 px-6 py-[0.625rem] text-lg;
+	}
+}

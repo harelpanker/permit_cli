@@ -1,6 +1,8 @@
 @import 'tailwindcss';
 @plugin "tailwindcss-motion";
 
+@import '../styles/button.css';
+
 @theme {
 	--font-poppins: 'Poppins', 'sans-serif';
 	--font-ibm: 'IBM Plex Mono', monospace;

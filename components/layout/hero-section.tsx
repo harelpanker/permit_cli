@@ -31,7 +31,7 @@ export default function HeroSection({
 				<Container className='max-w-sm md:max-w-3xl lg:flex lg:max-w-[66.565rem] lg:items-center lg:justify-between lg:gap-x-12 xl:gap-x-8'>
 					<div className='flex flex-col gap-y-12'>
 						<div className='flex flex-col gap-y-6'>
-							<figure className='max-w-3/4 mx-auto w-full lg:mx-0 lg:max-w-max'>
+							<figure className='mx-auto w-full lg:mx-0 lg:max-w-max'>
 								<Image priority src={heroMain} alt='Permit.io CLI Launch Week' />
 							</figure>
 

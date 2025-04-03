@@ -10,7 +10,7 @@ export function TextSubTitle({ className, ...props }: React.ComponentPropsWithou
 		<p
 			data-slot='text'
 			{...props}
-			className={clsx(className, 'text-pretty text-theme-base-content-variant text-lg font-semibold')}
+			className={clsx(className, 'text-pretty text-theme-base-content-variant text-lg font-semibold tracking-tighter')}
 		/>
 	);
 }
