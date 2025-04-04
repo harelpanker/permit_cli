@@ -11,10 +11,10 @@
 
 	& .cardDate {
 		font-family: var(--font-ibm);
-		font-size: 1.125rem;
-		font-weight: 600;
+		font-size: 1.25rem;
+		font-weight: 500;
 		width: 6rem;
-		letter-spacing: -1px;
+		line-height: 1;
 		letter-spacing: 1;
 		border: 2px solid var(--color-theme-base-content);
 		align-self: flex-start;
@@ -63,6 +63,20 @@
 			height: 5.2px;
 			display: block;
 			border-top-right-radius: 36px;
+		}
+	}
+}
+
+@media only screen and (min-width: 1024px) {
+	.card {
+		& .cardDate {
+			font-size: 1.625rem;
+			width: 7rem;
+			height: 34px;
+			transform: translate(2px, -44px);
+			& span {
+				top: 62%;
+			}
 		}
 	}
 }

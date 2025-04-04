@@ -24,7 +24,7 @@ export type CradProps = {
 	textBottom: string;
 };
 
-export const cardsData = [
+export const cardsData: CradProps[] = [
 	{
 		date: '21/04',
 		livestreamLink: 'https://lu.ma/plkwvl5v',
