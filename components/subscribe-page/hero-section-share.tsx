@@ -29,12 +29,11 @@ export default function HeroSectionShare({ name = 'Gabriel Manor', number = 304 
 	return (
 		<Container className='bg-theme-ffdcc3 lg:min-h-56 relative -left-7 mt-20 flex w-[100svw] items-center justify-center gap-x-2 rounded-none px-3 text-left sm:left-0 sm:w-full sm:rounded-3xl md:px-10 lg:mt-24 lg:justify-start lg:gap-x-24 lg:px-16 xl:px-24'>
 			<figure className='text-theme-white font-ibm relative -mb-4 -mt-4 shrink-0 sm:-mb-10 sm:-mt-9'>
-				<Image
-					className='relative z-10'
-					src={width < mobileWidth ? imageMobile : imageDesktop}
-					alt='Permit.io'
-					priority
-				/>
+				{width < mobileWidth ? (
+					<Image className='relative z-10 sm:hidden' src={imageMobile} alt='Permit.io' priority />
+				) : (
+					<Image className='relative z-10 hidden sm:block' src={imageDesktop} alt='Permit.io' priority />
+				)}
 				<div className='absolute inset-0 right-0 z-20 flex h-full w-full max-w-[8.375rem] flex-col justify-end gap-y-1 p-2 pb-8 pl-3 sm:left-auto sm:max-w-[11.75rem] sm:pb-10 sm:pl-4 lg:-bottom-16'>
 					<div className='text-base font-medium leading-tight lg:text-2xl'>{name}</div>
 					<div className='text-3xl font-semibold lg:text-5xl'>#{number}</div>
