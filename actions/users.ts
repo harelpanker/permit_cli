@@ -4,8 +4,8 @@ import { getSupabaseAuth } from '@/lib/auth';
 import { Provider } from '@supabase/supabase-js';
 
 export const loginAction = async (provider: Provider) => {
-	const url = 'https://deploy-preview-1--permicli.netlify.app';
-	// const localhostUrl = 'http://localhost:3000';
+	const isProduction = process.env.NODE_ENV === 'production';
+	const baseUrl = isProduction ? 'https://deploy-preview-1--permicli.netlify.app' : 'http://localhost:3000';
 
 	try {
 		const { data, error } = await (
@@ -13,7 +13,7 @@ export const loginAction = async (provider: Provider) => {
 		).signInWithOAuth({
 			provider,
 			options: {
-				redirectTo: `${url}/api/auth/`,
+				redirectTo: `${baseUrl}/api/auth/`,
 			},
 		});
 
