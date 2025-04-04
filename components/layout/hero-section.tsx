@@ -13,15 +13,7 @@ import heroMain from '@/assets/home-page/hero-section/cli_launch_week.svg';
 import backgroundImage from '@/assets/home-page/hero-section/background.svg';
 import logo from '@/assets/layout/logo.svg';
 
-export default function HeroSection({
-	showBottom = true,
-	name,
-	number,
-}: {
-	showBottom?: boolean;
-	name?: string;
-	number?: number;
-}) {
+export default function HeroSection({ showBottom = true, userName }: { showBottom?: boolean; userName?: string }) {
 	return (
 		<Background showMobileImage={false} imageDesktop={backgroundImage}>
 			<Section className='flex flex-col py-14 text-center lg:gap-y-12 lg:py-28 lg:text-left'>
@@ -58,7 +50,7 @@ export default function HeroSection({
 					</div>
 				</Container>
 
-				{!showBottom ? <HeroSectionShare name={name} number={number} /> : null}
+				{!showBottom ? <HeroSectionShare userName={userName} /> : null}
 
 				<hr className='from-theme-orange to-theme-purple absolute bottom-0 left-0 top-auto h-[2px] w-full border-none bg-gradient-to-r' />
 			</Section>

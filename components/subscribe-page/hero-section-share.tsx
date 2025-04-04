@@ -6,6 +6,7 @@ import Container from '@/components/ui/container';
 import { Heading } from '@/components/ui/heading';
 import { useViewportSize } from '@mantine/hooks';
 import { TwitterShareButton } from 'react-share';
+import UserData from '@/components/subscribe-page/user-data';
 
 import icon from '@/assets/layout/x-twitter.svg';
 import imageMobile from '@/assets/subscribe-page/hero-section/cards-group-mobile.svg';
@@ -17,7 +18,7 @@ Join me for a week of live coding, learning, and unhinged @permit_io SWAG 🤖
 
 Register now:`;
 
-export default function HeroSectionShare({ name = 'Gabriel Manor', number = 304 }: { name?: string; number?: number }) {
+export default function HeroSectionShare({ userName }: { userName?: string }) {
 	const mobileWidth = 640;
 	const { width } = useViewportSize();
 	const [currentUrl, setCurrentUrl] = useState('');
@@ -34,11 +35,7 @@ export default function HeroSectionShare({ name = 'Gabriel Manor', number = 304 
 				) : (
 					<Image className='relative z-10 hidden sm:block' src={imageDesktop} alt='Permit.io' priority />
 				)}
-				<div className='absolute inset-0 right-0 z-20 flex h-full w-full max-w-[8.375rem] flex-col justify-end gap-y-1 p-2 pb-8 pl-3 sm:left-auto sm:max-w-[11.75rem] sm:pb-10 sm:pl-4 lg:-bottom-16'>
-					<div className='text-base font-medium leading-tight lg:text-2xl'>{name}</div>
-					<div className='text-3xl font-semibold lg:text-5xl'>#{number}</div>
-					<p className='text-xs font-medium lg:text-base'>March 28-31|2025 Virtual</p>
-				</div>
+				{userName && <UserData name={userName} />}
 			</figure>
 
 			{/* right */}
