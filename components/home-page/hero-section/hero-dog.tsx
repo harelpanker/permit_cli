@@ -9,8 +9,6 @@ import dogBottom from '@/assets/home-page/hero-section/hero-bottom.svg';
 import dogTop from '@/assets/home-page/hero-section/hero-top.svg';
 
 export default function HeroDog() {
-	const animationDuration = 7;
-	const animationDuration2 = 9;
 	const { width } = useViewportSize();
 	const scrollFromTop = width < 1024 ? 30 : 50;
 	const [scroll] = useWindowScroll();
@@ -43,9 +41,7 @@ export default function HeroDog() {
 				src={dogBottom}
 				alt=''
 				className={`max-w-1/2 absolute inset-0 top-[40%] z-10 ${
-					state.dogBottom
-						? `motion-translate-y-loop-[15%] motion-duration-[${animationDuration}s] motion-ease-in-out-cubic`
-						: ''
+					state.dogBottom ? `motion-translate-y-loop-[15%] motion-duration-[7s] motion-ease-in-out-cubic` : ''
 				}`}
 			/>
 			<Image priority src={dog} alt='' className='relative z-20' />
@@ -54,9 +50,7 @@ export default function HeroDog() {
 				src={dogTop}
 				alt=''
 				className={`max-w-1/2 absolute inset-0 left-[25%] top-[24%] z-30 ${
-					state.dogTop
-						? `motion-translate-y-loop-[5%] motion-duration-[${animationDuration2}s] motion-ease-in-out-cubic`
-						: ''
+					state.dogTop ? `motion-translate-y-loop-[5%] motion-duration-[9s] motion-ease-in-out-cubic` : ''
 				}`}
 			/>
 		</figure>
