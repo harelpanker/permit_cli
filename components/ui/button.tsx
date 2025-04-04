@@ -1,7 +1,13 @@
+'use client';
+
 import clsx from 'clsx';
 import Image, { StaticImageData } from 'next/image';
-import React, { ComponentPropsWithoutRef } from 'react';
+import React, { ComponentPropsWithoutRef, Fragment, useTransition } from 'react';
 import github from '@/assets/layout/github-white.svg';
+import { Provider } from '@supabase/supabase-js';
+import { loginAction } from '@/actions/users';
+import { useRouter } from 'next/navigation';
+import toast from 'react-hot-toast';
 
 interface ButtonProps extends ComponentPropsWithoutRef<'button'> {
 	text?: string;
@@ -13,7 +19,7 @@ interface ButtonProps extends ComponentPropsWithoutRef<'button'> {
 	href?: string;
 }
 
-const Button: React.FC<ButtonProps> = ({
+export default function Button({
 	text = 'Subscribe to Event',
 	icon = true,
 	iconSrc,
@@ -21,22 +27,35 @@ const Button: React.FC<ButtonProps> = ({
 	secondary = false,
 	isSmall = false,
 	href,
-	onClick,
+
 	className = '',
 	...props
-}) => {
+}: ButtonProps) {
 	const commonClasses = clsx(
 		className,
-		`button-base ${primary ? 'button-primary' : null} ${isSmall ? 'is-small' : 'is-normal'} ${
-			secondary ? 'button-secondary' : null
+		`button-base${primary ? ' button-primary' : ''}${isSmall ? ' is-small' : ' is-normal'}${
+			secondary ? ' button-secondary' : ''
 		}`
 	);
+	const router = useRouter();
+	const [isPending, startTransition] = useTransition();
+
+	const handleClickLoginButton = (provider: Provider) => {
+		startTransition(async () => {
+			const { errorMessage, url } = await loginAction(provider);
+			if (!errorMessage && url) {
+				router.push(url);
+			} else {
+				toast.error(errorMessage || 'Error logging in');
+			}
+		});
+	};
 
 	const innerContent = (
-		<>
+		<Fragment>
 			{icon ? <Image src={iconSrc ? iconSrc : github} alt={text} /> : null}
 			<span>{text}</span>
-		</>
+		</Fragment>
 	);
 
 	return href ? (
@@ -44,10 +63,8 @@ const Button: React.FC<ButtonProps> = ({
 			{innerContent}
 		</a>
 	) : (
-		<button {...props} onClick={onClick} className={commonClasses}>
-			{innerContent}
+		<button {...props} disabled={isPending} onClick={() => handleClickLoginButton('github')} className={commonClasses}>
+			{isPending ? 'Logging in...' : innerContent}
 		</button>
 	);
-};
-
-export default Button;
+}
