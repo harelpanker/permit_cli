@@ -1,20 +1,11 @@
-import CardsSection from '@/components/layout/cards-section';
-import HeroSection from '@/components/layout/hero-section';
-import MobileNavbar from '@/components/layout/mobile-navbar';
+import { Fragment } from 'react';
+import UserIn from '@/components/home-page/user-in';
+import UserOut from '@/components/home-page/user-out';
+import { getUser } from '@/lib/auth';
 
-export default async function Home() {
-	return (
-		<>
-			<MobileNavbar />
-			<main>
-				<HeroSection />
-				<CardsSection
-					isHomePage={true}
-					isSubscribePage={false}
-					title='Subscribe and reveal our exclusive CLI livestreams:'
-					subtitle='Join us for 5 days of exciting new releases'
-				/>
-			</main>
-		</>
-	);
+export default async function HomePage() {
+	const user = await getUser();
+	const name = user?.user_metadata?.full_name;
+
+	return <Fragment>{name ? <UserIn name={name} /> : <UserOut />}</Fragment>;
 }

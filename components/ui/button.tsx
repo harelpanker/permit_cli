@@ -59,7 +59,11 @@ export default function Button({
 	);
 
 	return href ? (
-		<a href={href} target='_blank' rel='noopener noreferrer' className={commonClasses}>
+		<a
+			href={href}
+			target={href.includes('https') ? '_blank' : '_self'}
+			rel={href.includes('https') ? 'noopener noreferrer' : ''}
+			className={commonClasses}>
 			{innerContent}
 		</a>
 	) : (
