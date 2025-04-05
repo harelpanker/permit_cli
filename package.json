@@ -13,6 +13,7 @@
     "@supabase/ssr": "^0.6.1",
     "@supabase/supabase-js": "^2.49.4",
     "@tailwindcss/postcss": "^4.0.17",
+    "@vercel/og": "^0.6.8",
     "clsx": "^2.1.1",
     "lucide-react": "^0.486.0",
     "motion": "^12.6.2",
