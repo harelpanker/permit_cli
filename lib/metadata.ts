@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 
-const SITE_URL = 'https://www.permit.io';
+const SITE_URL = 'https://permicli.netlify.app/';
 const SITE_TITLE = 'Permit.io CLI Launch Week';
 const SITE_DESCRIPTION = 'Developer-First Integrated Authorization';
 const CANONICAL_URL = '/';

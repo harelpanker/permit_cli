@@ -6,7 +6,7 @@ export const runtime = 'edge';
 export default async function Image() {
 	const user = await getUser();
 	const name = user?.user_metadata?.full_name;
-	const avatar = user?.user_metadata?.avatar_url;
+	// const avatar = user?.user_metadata?.avatar_url;
 
 	const fontData = await fetch(new URL('../../public/fonts/ibm.ttf', import.meta.url)).then((res) => res.arrayBuffer());
 
