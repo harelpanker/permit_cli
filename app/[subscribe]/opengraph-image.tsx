@@ -1,21 +1,13 @@
 import { ImageResponse } from 'next/og';
-
-// import x from '../../public/og-base-image.png'
+import { getUser } from '@/lib/auth';
 
 export const runtime = 'edge';
 
-// const toUserArray = (ticket: string) => {
-// 	try {
-// 		return atob(decodeURIComponent(ticket))?.split(' ');
-// 	} catch (e) {
-// 		console.log(e);
-// 		return ['', '', ''];
-// 	}
-// };
-
-// { params }: { params: { ticket: string } }
 export default async function Image() {
-	// const user = toUserArray(params.ticket);
+	const user = await getUser();
+	const name = user?.user_metadata?.full_name;
+	// const avatar = user?.user_metadata?.avatar_url;
+
 	const fontData = await fetch(new URL('../../public/fonts/ibm.ttf', import.meta.url)).then((res) => res.arrayBuffer());
 
 	const imageData = await fetch(new URL('../../public/og-base-image.png', import.meta.url)).then((res) =>
@@ -54,7 +46,7 @@ export default async function Image() {
 							src={imagePlaceholderData as unknown as string}
 							alt='OG Image'
 						/>
-						<div>Johnantan Doesonevsky</div>
+						<div style={{ display: 'flex', maxWidth: 270 }}>{name}</div>
 					</div>
 					<div style={{ position: 'absolute', top: -30, right: 80, display: 'flex' }}>
 						<img width={63} height={58} src={imageTopIcon as unknown as string} alt='OG Image' />
