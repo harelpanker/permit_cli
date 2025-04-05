@@ -5,7 +5,7 @@ import { generateMetadata } from '@/lib/metadata';
 
 export const metadata: Metadata = generateMetadata({
 	canonicalUrl: '/subscribe',
-	image: '/subscribe/opengraph-image.png',
+	image: '/subscribe/opengraph-image',
 });
 
 export default async function SubscribePage() {
