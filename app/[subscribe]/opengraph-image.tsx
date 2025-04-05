@@ -13,7 +13,8 @@ export const runtime = 'edge';
 // 	}
 // };
 
-export default async function Image({ params }: { params: { ticket: string } }) {
+// { params }: { params: { ticket: string } }
+export default async function Image() {
 	// const user = toUserArray(params.ticket);
 	const fontData = await fetch(new URL('../../public/fonts/ibm.ttf', import.meta.url)).then((res) => res.arrayBuffer());
 
