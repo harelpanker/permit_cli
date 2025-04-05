@@ -38,14 +38,15 @@ export function generateMetadata({
 			description: description ? description : SITE_DESCRIPTION,
 			url: SITE_URL,
 			siteName: SITE_NAME,
-			images: image ? image : SITE_IMAGE,
+			images: image ? [{ url: image }] : [{ url: SITE_IMAGE }],
+			// images: image ? image : SITE_IMAGE,
 			locale: 'en_US',
 		},
 		twitter: {
 			card: 'summary_large_image',
 			title: title ? title : SITE_TITLE,
 			description: description ? description : SITE_DESCRIPTION,
-			images: image ? image : SITE_IMAGE,
+			images: image ? [{ url: image }] : [{ url: SITE_IMAGE }],
 			creator: '@permit_io',
 		},
 		robots: {
