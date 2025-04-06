@@ -1,4 +1,4 @@
-/* eslint-disable rule-name, another-rule-name */
+/* eslint-disable no-explicit-any, prefer-const, ban-ts-comment */
 // This code comes from https://github.com/adobe/react-spectrum/blob/main/packages/%40react-aria/overlays/src/usePreventScroll.ts
 
 import { useEffect, useLayoutEffect } from 'react';
