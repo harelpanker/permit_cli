@@ -36,9 +36,8 @@ interface PreventScrollOptions {
 	focusCallback?: () => void;
 }
 
-// @ts-ignore
+/* eslint-disable */
 function chain(...callbacks: any[]): (...args: any[]) => void {
-	// @ts-ignore
 	return (...args: any[]) => {
 		for (let callback of callbacks) {
 			if (typeof callback === 'function') {
@@ -48,7 +47,7 @@ function chain(...callbacks: any[]): (...args: any[]) => void {
 	};
 }
 
-// @ts-ignore
+/* eslint-enable */
 const visualViewport = typeof document !== 'undefined' && window.visualViewport;
 
 export function isScrollable(node: Element): boolean {
