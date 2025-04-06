@@ -1,4 +1,3 @@
-/* eslint-disable no-explicit-any, prefer-const, ban-ts-comment */
 // This code comes from https://github.com/adobe/react-spectrum/blob/main/packages/%40react-aria/overlays/src/usePreventScroll.ts
 
 import { useEffect, useLayoutEffect } from 'react';
@@ -37,7 +36,9 @@ interface PreventScrollOptions {
 	focusCallback?: () => void;
 }
 
+// @ts-no-explicit-any
 function chain(...callbacks: any[]): (...args: any[]) => void {
+	// @ts-no-explicit-any
 	return (...args: any[]) => {
 		for (let callback of callbacks) {
 			if (typeof callback === 'function') {
@@ -47,7 +48,7 @@ function chain(...callbacks: any[]): (...args: any[]) => void {
 	};
 }
 
-// @ts-ignore
+// @ts-expect-error
 const visualViewport = typeof document !== 'undefined' && window.visualViewport;
 
 export function isScrollable(node: Element): boolean {
@@ -275,13 +276,13 @@ function preventScrollMobileSafari() {
 // Sets a CSS property on an element, and returns a function to revert it to the previous value.
 function setStyle(element: HTMLElement, style: keyof React.CSSProperties, value: string) {
 	// https://github.com/microsoft/TypeScript/issues/17827#issuecomment-391663310
-	// @ts-ignore
+	// @ts-expect-error
 	let cur = element.style[style];
-	// @ts-ignore
+	// @ts-expect-error
 	element.style[style] = value;
 
 	return () => {
-		// @ts-ignore
+		// @ts-expect-error
 		element.style[style] = cur;
 	};
 }
@@ -293,11 +294,11 @@ function addEvent<K extends keyof GlobalEventHandlersEventMap>(
 	handler: (this: Document, ev: GlobalEventHandlersEventMap[K]) => any,
 	options?: boolean | AddEventListenerOptions
 ) {
-	// @ts-ignore
+	// @ts-expect-error
 	target.addEventListener(event, handler, options);
 
 	return () => {
-		// @ts-ignore
+		// @ts-expect-error
 		target.removeEventListener(event, handler, options);
 	};
 }
@@ -319,7 +320,7 @@ function scrollIntoView(target: Element) {
 			}
 		}
 
-		// @ts-ignore
+		// @ts-expect-error
 		target = scrollable.parentElement;
 	}
 }
