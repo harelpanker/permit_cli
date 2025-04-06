@@ -36,9 +36,9 @@ interface PreventScrollOptions {
 	focusCallback?: () => void;
 }
 
-// @ts-no-explicit-any
+// @ts-ignore
 function chain(...callbacks: any[]): (...args: any[]) => void {
-	// @ts-no-explicit-any
+	// @ts-ignore
 	return (...args: any[]) => {
 		for (let callback of callbacks) {
 			if (typeof callback === 'function') {
@@ -48,7 +48,7 @@ function chain(...callbacks: any[]): (...args: any[]) => void {
 	};
 }
 
-// @ts-expect-error
+// @ts-ignore
 const visualViewport = typeof document !== 'undefined' && window.visualViewport;
 
 export function isScrollable(node: Element): boolean {
@@ -276,13 +276,13 @@ function preventScrollMobileSafari() {
 // Sets a CSS property on an element, and returns a function to revert it to the previous value.
 function setStyle(element: HTMLElement, style: keyof React.CSSProperties, value: string) {
 	// https://github.com/microsoft/TypeScript/issues/17827#issuecomment-391663310
-	// @ts-expect-error
-	let cur = element.style[style];
-	// @ts-expect-error
+	// @ts-expect-error explain
+	const cur = element.style[style];
+	// @ts-expect-error explain
 	element.style[style] = value;
 
 	return () => {
-		// @ts-expect-error
+		// @ts-expect-error explain
 		element.style[style] = cur;
 	};
 }
@@ -294,24 +294,24 @@ function addEvent<K extends keyof GlobalEventHandlersEventMap>(
 	handler: (this: Document, ev: GlobalEventHandlersEventMap[K]) => any,
 	options?: boolean | AddEventListenerOptions
 ) {
-	// @ts-expect-error
+	// @ts-expect-error explain
 	target.addEventListener(event, handler, options);
 
 	return () => {
-		// @ts-expect-error
+		// @ts-expect-error explain
 		target.removeEventListener(event, handler, options);
 	};
 }
 
 function scrollIntoView(target: Element) {
-	let root = document.scrollingElement || document.documentElement;
+	const root = document.scrollingElement || document.documentElement;
 	while (target && target !== root) {
 		// Find the parent scrollable element and adjust the scroll position if the target is not already in view.
-		let scrollable = getScrollParent(target);
+		const scrollable = getScrollParent(target);
 		if (scrollable !== document.documentElement && scrollable !== document.body && scrollable !== target) {
-			let scrollableTop = scrollable.getBoundingClientRect().top;
-			let targetTop = target.getBoundingClientRect().top;
-			let targetBottom = target.getBoundingClientRect().bottom;
+			const scrollableTop = scrollable.getBoundingClientRect().top;
+			const targetTop = target.getBoundingClientRect().top;
+			const targetBottom = target.getBoundingClientRect().bottom;
 			// Buffer is needed for some edge cases
 			const keyboardHeight = scrollable.getBoundingClientRect().bottom + KEYBOARD_BUFFER;
 
@@ -320,7 +320,7 @@ function scrollIntoView(target: Element) {
 			}
 		}
 
-		// @ts-expect-error
+		// @ts-expect-error explain
 		target = scrollable.parentElement;
 	}
 }
