@@ -47,7 +47,6 @@ function chain(...callbacks: any[]): (...args: any[]) => void {
 	};
 }
 
-/* eslint-enable */
 const visualViewport = typeof document !== 'undefined' && window.visualViewport;
 
 export function isScrollable(node: Element): boolean {
@@ -331,3 +330,4 @@ export function isInput(target: Element) {
 		(target instanceof HTMLElement && target.isContentEditable)
 	);
 }
+/* eslint-enable */
