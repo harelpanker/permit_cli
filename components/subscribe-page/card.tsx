@@ -34,13 +34,19 @@ export default function Card({ card, index, isSurprise, setIsSurprise }: CardPro
 				<div className='bg-theme-base-content-variant-2 text-theme-white w-full rounded-lg p-4 lg:grid lg:grid-cols-2 lg:gap-x-8 lg:px-10 lg:py-7 xl:flex'>
 					{index % 2 === 0 ? <CardImage imageDesktop={card.imageDesktop} title={card.title} /> : null}
 					<div className='flex flex-col gap-y-4'>
-						<Text className='font-poppins text-sm font-semibold lg:text-lg'>Permit Launch Week | Day {index + 1}</Text>
 						<figure className='lg:hidden'>
 							<Image className='w-full' src={card.imageMobile} alt={card.title} />
 						</figure>
-						<Heading level={3} className='font-ibm !text-2xl lg:!text-[2rem]'>
-							{card.title}
-						</Heading>
+
+						<div className='flex flex-col gap-y-4'>
+							<Heading level={3} className='font-ibm !text-2xl lg:!text-[2rem]'>
+								{card.title}
+							</Heading>
+							<Text className='font-poppins order-first text-sm font-semibold lg:order-last lg:text-lg'>
+								Permit Launch Week | Day {index + 1}
+							</Text>
+						</div>
+
 						<div className='flex w-full max-w-prose flex-col gap-y-2'>
 							<Text dangerouslySetInnerHTML={{ __html: card.textTop }} />
 
