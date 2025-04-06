@@ -1,6 +1,7 @@
 import HeroSection from '@/components/layout/hero-section';
 import MobileNavbar from '@/components/layout/mobile-navbar';
 import CardsSection from '@/components/layout/cards-section';
+import ExitModal from '@/components/motion-primitives/exit-modal';
 
 export default function UserIn({ name }: { name?: string }) {
 	return (
@@ -16,6 +17,7 @@ export default function UserIn({ name }: { name?: string }) {
 					subtitle='Join us for 5 days of exciting new releases'
 				/>
 			</main>
+			<ExitModal subscribePage />
 		</>
 	);
 }
