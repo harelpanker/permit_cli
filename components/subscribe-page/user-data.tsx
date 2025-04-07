@@ -26,7 +26,7 @@ export default function UserData({ name }: { name?: string }) {
 			/>
 			<div className='text-base font-medium leading-tight lg:mt-2 lg:text-xl'>{name}</div>
 
-			<p className='text-[8px] font-medium lg:text-[11px]'>March 28-31|2025 Virtual</p>
+			<p className='text-[7px] font-medium md:text-[9px]'>April 21-25 | 2025 | Virtual</p>
 		</div>
 	);
 }
