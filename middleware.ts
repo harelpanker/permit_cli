@@ -94,15 +94,15 @@ export async function middleware(request: NextRequest) {
 	const path = new URL(request.url).pathname;
 	const user = await getUser(request, response);
 
-	// const permitUrls = ['/', '/api/auth'];
+	const permitUrls = ['/', '/api/auth'];
 
-	if (path === '/subscribe' && !user) {
-		return NextResponse.redirect(new URL('/', request.url));
-	}
-
-	// if (!permitUrls.includes(path) && !user) {
+	// if (path === '/subscribe' && !user) {
 	// 	return NextResponse.redirect(new URL('/', request.url));
 	// }
+
+	if (!permitUrls.includes(path) && !user) {
+		return NextResponse.redirect(new URL('/', request.url));
+	}
 
 	return response;
 }
