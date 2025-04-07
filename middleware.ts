@@ -12,7 +12,7 @@ export async function middleware(request: NextRequest) {
 
 	const user = await getUser(request, response);
 
-	if (path !== '/' && !user) {
+	if (path === '/subscribe' && !user) {
 		return NextResponse.redirect(new URL('/', request.url));
 	}
 
