@@ -47,7 +47,7 @@ export default function ExitModal({ subscribePage = false }: { subscribePage: bo
 			const directionUp = window.scrollY < lastY;
 			lastY = window.scrollY;
 
-			if (directionUp && window.scrollY < 100 && leftsCount < 1) {
+			if (directionUp && window.scrollY < 160 && leftsCount < 1) {
 				console.log('Possible exit intent on mobile');
 				setIsOpen(true);
 				setLeftsCount((prev) => {
