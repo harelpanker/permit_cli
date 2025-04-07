@@ -41,7 +41,7 @@ export default function HeroSectionShare({ userName }: { userName?: string }) {
 			{/* right */}
 			<div className='flex w-full max-w-[12.75rem] flex-col gap-y-3 sm:max-w-[22rem] lg:gap-y-5'>
 				<Heading className='!text-base sm:!text-[1.625rem]' level={3}>
-					Share your ticket for a chance to win a sticker pack
+					Share your Ticket for a Chance to Win a Sticker Pack
 				</Heading>
 				<div className='flex'>
 					{currentUrl && (

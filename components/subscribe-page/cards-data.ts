@@ -56,7 +56,7 @@ export const cardsData: CradProps[] = [
 			"Redefine fine-grained authorization with Permit.io's CLI and natural language commands. Set up policies in minutes, no need for extra tools or manual configuration. <br class='hidden md:block' />In this session, we'll demonstrate how you can:",
 		list: [
 			'Generate policies using plain English',
-			'Walk through setup with the interactive policy wizard',
+			'Interactive policy wizard setup walkthrough',
 			'Enforce policies directly in your codebase',
 		],
 		textBottom: 'Fast, flexible authorization control from your terminal.',

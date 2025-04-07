@@ -13,25 +13,21 @@ export default function CardsSection({
 	isHomePage = true,
 	isSubscribePage = false,
 	title,
-	subtitle,
-	name,
 }: {
 	isHomePage: boolean;
 	isSubscribePage?: boolean;
 	title: string;
-	subtitle: string;
-	name?: string;
 }) {
 	return (
 		<Background imageDesktop={background} imageMobile={backgroundMobile}>
 			<Section id='subscribe' className='flex flex-col gap-y-14 !px-0 pt-20 lg:gap-y-24 lg:!px-12 lg:pb-36 lg:pt-24'>
 				<Container className='flex flex-col gap-y-14 px-4 lg:gap-y-20 xl:px-0'>
-					<Header title={title} subtitle={subtitle} />
+					<Header title={title} />
 					{isHomePage ? <HomeCards /> : null}
 					{isSubscribePage ? <SubscribeCards /> : null}
 				</Container>
 
-				<CTA name={name} />
+				<CTA isSubscribePage={isSubscribePage} />
 			</Section>
 		</Background>
 	);

@@ -9,13 +9,7 @@ export default function UserIn({ name }: { name?: string }) {
 			<MobileNavbar ctaIcon={false} ctaText='Sign Up for Livestreams' href='#subscribe' />
 			<main>
 				<HeroSection userName={name || 'Gabriel Manor'} showBottom={false} />
-				<CardsSection
-					name={name || ''}
-					isSubscribePage={true}
-					isHomePage={false}
-					title='Subscribe to our exclusive CLI livestreams'
-					subtitle='Join us for 5 days of exciting new releases'
-				/>
+				<CardsSection isSubscribePage={true} isHomePage={false} title='Join us for 5 days of Exciting New Releases:' />
 			</main>
 			<ExitModal subscribePage />
 		</>

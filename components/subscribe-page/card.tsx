@@ -43,7 +43,7 @@ export default function Card({ card, index, isSurprise, setIsSurprise }: CardPro
 								{card.title}
 							</Heading>
 							<Text className='font-poppins order-first text-sm font-semibold lg:order-last lg:text-lg'>
-								Permit Launch Week | Day {index + 1}
+								Permit CLI Launch | Day {index + 1}
 							</Text>
 						</div>
 

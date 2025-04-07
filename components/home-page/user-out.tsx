@@ -9,12 +9,7 @@ export default function UserOut() {
 			<MobileNavbar />
 			<main>
 				<HeroSection />
-				<CardsSection
-					isHomePage={true}
-					isSubscribePage={false}
-					title='Subscribe and reveal our exclusive CLI livestreams:'
-					subtitle='Join us for 5 days of exciting new releases'
-				/>
+				<CardsSection isHomePage={true} isSubscribePage={false} title='Join us for 5 days of Exciting New Releases:' />
 			</main>
 			<ExitModal subscribePage={false} />
 		</>

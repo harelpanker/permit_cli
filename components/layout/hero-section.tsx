@@ -38,9 +38,9 @@ export default function HeroSection({ showBottom = true, userName }: { showBotto
 
 						{showBottom ? (
 							<div className='flex flex-col gap-y-6'>
-								<TextSubTitle>Subscribe to stay tuned for each launch and a chance to win SWAG!</TextSubTitle>
+								<TextSubTitle>Stay tuned for each launch and a chance to win SWAG!</TextSubTitle>
 								<div className='flex w-full items-center justify-center lg:justify-start'>
-									<Button />
+									<Button text='Subscribe with Github' />
 								</div>
 							</div>
 						) : null}
