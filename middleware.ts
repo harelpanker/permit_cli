@@ -108,7 +108,12 @@ export async function middleware(request: NextRequest) {
 	if (user) {
 		const userSlug = btoa(`${user?.user_metadata?.user_name} ${user?.user_metadata?.full_name}`);
 
-		if (path === '/' || (path !== '/api/auth' && path !== `/${userSlug}` && !path.includes('opengraph-image'))) {
+		if (
+			request.nextUrl.pathname === '/' ||
+			(request.nextUrl.pathname !== '/api/auth' &&
+				request.nextUrl.pathname !== `/${userSlug}` &&
+				!request.nextUrl.pathname.includes('opengraph-image'))
+		) {
 			// Redirect logged-in users to their personal page
 			const url = request.nextUrl.clone();
 			url.pathname = `/${userSlug}`;
