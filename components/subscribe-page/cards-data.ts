@@ -35,7 +35,7 @@ export const cardsData: CradProps[] = [
 		cardColor: '#FFDCC3',
 		title: 'Full CI/CD Support for Authorization',
 		textTop:
-			"Add authorization to your CI/CD workflows with the Permit.io CLI. Automate policy deployment, environment setup, and testing right from your pipeline. <br class='hidden md:block' />In this session, we'll demonstrate how you can:",
+			'Add authorization to your CI/CD workflows with the Permit.io CLI. Automate policy deployment, environment setup, and testing right from your pipeline.',
 		list: [
 			'Manage environments with CLI commands',
 			'Deploy policy updates via GitHub Actions',
@@ -53,7 +53,7 @@ export const cardsData: CradProps[] = [
 		cardColor: '#DAC3FF',
 		title: 'Fine-Grained Authorization Redefined',
 		textTop:
-			"Redefine fine-grained authorization with Permit.io's CLI and natural language commands. Set up policies in minutes, no need for extra tools or manual configuration. <br class='hidden md:block' />In this session, we'll demonstrate how you can:",
+			"Redefine fine-grained authorization with Permit.io's CLI and natural language commands. Set up policies in minutes, no need for extra tools or manual configuration.",
 		list: [
 			'Generate policies using plain English',
 			'Interactive policy wizard setup walkthrough',
@@ -71,7 +71,7 @@ export const cardsData: CradProps[] = [
 		cardColor: '#FFDCC3',
 		title: 'Zero-Effort Policy Testing',
 		textTop:
-			"Test your authorization policies with zero friction, right from your CLI. Run unit, integration, and E2E tests to catch issues before deployment. <br class='hidden md:block' />In this session, we'll demonstrate how you can:",
+			'Test your authorization policies with zero friction, right from your CLI. Run unit, integration, and E2E tests to catch issues before deployment.',
 		list: [
 			'Validate policy logic with unit tests',
 			'Run integration tests across your system',
@@ -89,7 +89,7 @@ export const cardsData: CradProps[] = [
 		cardColor: '#FA934E',
 		title: 'API-First Authorization',
 		textTop:
-			"Add authorization to your APIs using OpenAPI and the Permit.io CLI. Generate and manage access policies directly from your API specs. <br class='hidden md:block' />In this session, we'll demonstrate how you can:",
+			'Add authorization to your APIs using OpenAPI and the Permit.io CLI. Generate and manage access policies directly from your API specs.',
 		list: [
 			'Create policies from OpenAPI specs',
 			'Use -x extensions to embed rules in your docs',
@@ -107,7 +107,7 @@ export const cardsData: CradProps[] = [
 		cardColor: '#DAC3FF',
 		title: 'A Better Rego Experience',
 		textTop:
-			"Take control with custom Rego and GitOps-powered policy management. Define, version, and test policies, all through the Permit.io CLI. <br class='hidden md:block' />In this session, we'll demonstrate how you can:",
+			'Take control with custom Rego and GitOps-powered policy management. Define, version, and test policies, all through the Permit.io CLI.',
 		list: [
 			'Sync and manage policies via Git',
 			'Customize logic with Rego extensions',
