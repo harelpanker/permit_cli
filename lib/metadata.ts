@@ -4,19 +4,16 @@ const SITE_URL = 'https://permicli.netlify.app/';
 const SITE_TITLE = 'Permit.io CLI Launch Week';
 const SITE_DESCRIPTION = 'Developer-First Integrated Authorization';
 const CANONICAL_URL = '/';
-const SITE_IMAGE = '/opengraph-image.png';
 const SITE_NAME = 'Permit.io CLI Launch Week';
 
 export function generateMetadata({
 	title,
 	description,
 	canonicalUrl,
-	image,
 }: {
 	title?: string;
 	description?: string;
 	canonicalUrl?: string;
-	image?: string;
 }): Metadata {
 	return {
 		title: title ? title : SITE_TITLE,
@@ -31,23 +28,6 @@ export function generateMetadata({
 			languages: {
 				'en-US': '/en-US',
 			},
-		},
-		openGraph: {
-			type: 'website',
-			title: title ? title : SITE_TITLE,
-			description: description ? description : SITE_DESCRIPTION,
-			url: SITE_URL,
-			siteName: SITE_NAME,
-			images: image ? [{ url: image }] : [{ url: SITE_IMAGE }],
-			// images: image ? image : SITE_IMAGE,
-			locale: 'en_US',
-		},
-		twitter: {
-			card: 'summary_large_image',
-			title: title ? title : SITE_TITLE,
-			description: description ? description : SITE_DESCRIPTION,
-			images: image ? [{ url: image }] : [{ url: SITE_IMAGE }],
-			creator: '@permit_io',
 		},
 		robots: {
 			index: true,

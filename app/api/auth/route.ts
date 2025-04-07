@@ -1,13 +1,18 @@
 import { cookies } from 'next/headers';
 import { NextResponse } from 'next/server';
+import { getUser } from '@/lib/auth';
 import { type CookieOptions, createServerClient } from '@supabase/ssr';
 
 export async function GET(request: Request) {
+	const user = await getUser();
+
 	const { searchParams, origin } = new URL(request.url);
 	const code = searchParams.get('code');
 	// if "next" is in param, use it as the redirect URL
 	// const next = searchParams.get('next') ?? '/subscribe';
-	const next = '/subscribe';
+	const userSlug = btoa(`${user?.user_metadata?.user_name} ${user?.user_metadata?.full_name}`);
+
+	const next = `/${userSlug}`;
 
 	if (code) {
 		const cookieStore = cookies();

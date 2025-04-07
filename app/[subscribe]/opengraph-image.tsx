@@ -1,12 +1,18 @@
 import { ImageResponse } from 'next/og';
-import { getUser } from '@/lib/auth';
 
 export const runtime = 'edge';
 
-export default async function Image() {
-	const user = await getUser();
-	const name = user?.user_metadata?.full_name;
-	// const avatar = user?.user_metadata?.avatar_url;
+const toUserArray = (ticket: string) => {
+	try {
+		return atob(decodeURIComponent(ticket))?.split(' ');
+	} catch (e) {
+		console.log(e);
+		return ['', '', ''];
+	}
+};
+
+export default async function Image({ params }: { params: { subscribe: string } }) {
+	const user = toUserArray(params.subscribe);
 
 	const fontData = await fetch(new URL('../../public/fonts/ibm.ttf', import.meta.url)).then((res) => res.arrayBuffer());
 
@@ -38,7 +44,7 @@ export default async function Image() {
 						color: '#FEFCFB',
 						fontFamily: '"IBM Plex Mono"',
 					}}>
-					<div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', width: 406, fontSize: '2.4rem' }}>
+					<div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', width: 406, fontSize: '2.2rem' }}>
 						<img
 							style={{ margin: '0 auto' }}
 							width={370}
@@ -46,7 +52,10 @@ export default async function Image() {
 							src={imagePlaceholderData as unknown as string}
 							alt='OG Image'
 						/>
-						<div style={{ display: 'flex', maxWidth: 270 }}>{name}</div>
+						<div style={{ display: 'flex', flexDirection: 'column' }}>
+							{`@${user[0]}`} <br />
+							<div style={{ display: 'flex' }}>{user[1] && user[2] ? `${user[1]} ${user[2]}` : null}</div>
+						</div>
 					</div>
 					<div style={{ position: 'absolute', top: -30, right: 80, display: 'flex' }}>
 						<img width={63} height={58} src={imageTopIcon as unknown as string} alt='OG Image' />
