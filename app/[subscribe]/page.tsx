@@ -5,7 +5,7 @@ import { generateMetadata } from '@/lib/metadata';
 
 export const metadata: Metadata = generateMetadata({
 	canonicalUrl: '/subscribe',
-	image: 'https://permicli.netlify.app/subscribe/opengraph-image',
+	image: '/subscribe/opengraph-image',
 });
 
 export default async function SubscribePage() {

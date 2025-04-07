@@ -20,7 +20,7 @@ interface ButtonProps extends ComponentPropsWithoutRef<'button'> {
 }
 
 export default function Button({
-	text = 'Subscribe to Event',
+	text = 'Subscribe to the event',
 	icon = true,
 	iconSrc,
 	primary = true,

@@ -59,7 +59,7 @@ export default async function Image() {
 			height: 630,
 			fonts: [
 				{
-					name: 'Times',
+					name: 'IBM',
 					data: fontData,
 					style: 'normal',
 				},

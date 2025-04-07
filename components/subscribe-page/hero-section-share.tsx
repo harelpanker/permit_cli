@@ -9,8 +9,8 @@ import { TwitterShareButton } from 'react-share';
 import UserData from '@/components/subscribe-page/user-data';
 
 import icon from '@/assets/layout/x-twitter.svg';
-import imageMobile from '@/assets/subscribe-page/hero-section/cards-group-mobile.svg';
-import imageDesktop from '@/assets/subscribe-page/hero-section/cards-group-desktop.svg';
+import imageMobile from '@/assets/subscribe-page/hero-section/cards-mobile.svg';
+import imageDesktop from '@/assets/subscribe-page/hero-section/cards-desktop.svg';
 
 const shareText = `I'm attending the Permit CLI Launch Week! 🚀
 
