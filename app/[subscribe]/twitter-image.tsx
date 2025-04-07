@@ -6,7 +6,7 @@ const toUserArray = (ticket: string) => {
 	try {
 		return atob(decodeURIComponent(ticket))?.split(' ');
 	} catch (e) {
-		// console.log(e);
+		console.log(e);
 		return ['', '', ''];
 	}
 };
