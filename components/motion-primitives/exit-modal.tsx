@@ -67,7 +67,7 @@ export default function ExitModal({ subscribePage = false }: { subscribePage: bo
 			<DialogContent>
 				<div
 					className={`bg-theme-base-content relative flex h-full w-full grow flex-col items-center justify-between overflow-hidden rounded-xl text-center lg:items-start lg:text-left`}>
-					<div className='text-theme-white relative z-20 flex grow flex-col items-center justify-between gap-y-4 p-4 pt-6 lg:items-start lg:p-8 lg:pb-14'>
+					<div className='text-theme-white relative z-20 flex grow flex-col items-center gap-y-4 p-4 pt-6 lg:items-start lg:justify-between lg:p-8 lg:pb-14'>
 						<Image src={logo} alt='logo' className='max-w-[90%]' />
 						<div className='flex flex-col items-center gap-y-5 lg:items-start'>
 							<Heading className='font-ibm !text-[1.4rem] lg:!text-[2.25rem]' level={2}>
