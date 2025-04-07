@@ -9,11 +9,23 @@ export async function middleware(request: NextRequest) {
 	});
 
 	const path = new URL(request.url).pathname;
-
 	const user = await getUser(request, response);
 
-	if (path === '/subscribe' && !user) {
+	const publicPaths = ['/', '/api/auth'];
+
+	if (!publicPaths.includes(path) && !path.includes('opengraph-image') && !user) {
 		return NextResponse.redirect(new URL('/', request.url));
+	}
+
+	if (user) {
+		const userSlug = btoa(`${user?.user_metadata?.user_name} ${user?.user_metadata?.full_name}`);
+
+		if (path === '/' || (path !== '/api/auth' && path !== `/${userSlug}` && !path.includes('opengraph-image'))) {
+			// Redirect logged-in users to their personal page
+			const url = request.nextUrl.clone();
+			url.pathname = `/${userSlug}`;
+			return NextResponse.redirect(url);
+		}
 	}
 
 	return response;
