@@ -10,7 +10,7 @@ export const metadata: Metadata = generateMetadata({});
 
 export default function RootLayout({ children }: Readonly<ChildrenProps>) {
 	return (
-		<html className={`${ibmPlexMono.style} ${poppins.style} ${inter.style} scroll-smooth`} lang='en' dir='ltr'>
+		<html className={`${ibmPlexMono.variable} ${poppins.variable} ${inter.variable} scroll-smooth`} lang='en' dir='ltr'>
 			<body className={`font-poppins text-theme-base-content relative z-10 flex min-h-screen flex-col antialiased`}>
 				<div className='flex-1'>{children}</div>
 				<DotsBackground />
